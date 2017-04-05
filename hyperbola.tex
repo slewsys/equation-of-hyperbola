@@ -1,0 +1,109 @@
+\documentclass{amsart}
+
+\newcommand{\phat}[1]{\hat{P}_{#1}}
+\newcommand{\qhat}[1]{\hat{Q}_{#1}}
+\newcommand{\rhat}[1]{\hat{R}_{#1}}
+\newcommand{\qsum}{Q_{12} + Q_{23} + Q_{31}}
+
+\begin{document}
+\title{An equation of the Hyperbola}
+\author{A. L. Moore}
+\email[A. L. Moore]{andrew.l.moore@icloud.com}
+\date{April 3, 2017}
+\keywords{descriptive geometry, numerical analysis}
+\subjclass[1991]{Primary: 51N05, Secondary: 65D10.}
+\begin{abstract}
+We derive an equation, $g(x)$, of the hyperbola through three given points
+$(\alpha_i, \beta_i)$ \, $i = 1, 2, 3$ with asymptotes having slopes
+$m_1$ and $m_2$:
+\[
+  g(x) = (\frac{m_1 + m_2}{2}) k(x) \pm
+  (\frac{m_1 - m_2}{2}) \sqrt{k^2(x) + 4 r} - m_1 s - m_2 t,
+\]
+where $k(x) = x + s + t$ and $r, s$ and $t$ are
+connected to the given points by the equations:
+\[
+  r + (s + a_i) (t - b_i) = 0, \qquad i = 1, 2, 3.
+\]
+\end{abstract}
+\maketitle
+
+\section{Introduction}
+Using elementary methods, we begin by solving the system:
+\begin{equation}\label{E:rightHyperbola}
+  r + (s + a_i) (t - b_i) = 0, \qquad i = 1, 2, 3,
+\end{equation}
+for $r$, $s$, and $t$ in terms of the $(a_i, b_i),$ giving:
+\begin{align}
+r &= a_3 \phat{12} + a_1 \phat{23} + a_2 \phat{31}, \notag\\
+-s &= a_3 \qhat{12} + a_1 \qhat{23} + a_2 \qhat{31}, \notag\\
+  t &= b_3 \rhat{12} + b_1 \rhat{23} + b_2 \rhat{31}, \notag
+\end{align}
+where, for $Q_{ij} = \frac{(a_i - a_j)^2}{b_i - b_j}$ and
+$R_{ij} = a_k (b_i - b_j)$, \quad $\{i, j, k\} = \{1, 2, 3\}$
+\begin{align}
+\phat{ij} &= \frac{a_i^2 - a_j^2}{\qsum}, \notag\\
+\qhat{ij} &= \frac{Q_{ij}}{\qsum}, \notag\\
+\rhat{ij} &= \frac{R_{ij}}{\qsum}. \notag
+\end{align}
+For given point coordinates $(\alpha_i, \beta_i),$ \,
+$i = 1, 2, 3,$ define
+$\begin{pmatrix}
+  a_i\\
+  b_i
+\end{pmatrix}
+= C
+\begin{pmatrix}
+  \alpha_i\\
+  \beta_i
+\end{pmatrix},$
+where
+\[
+  C =
+    \begin{pmatrix}
+      1 & -1\\
+      m_1 & m_2
+    \end{pmatrix} .
+\]
+\section{Geometric Interpretation}
+Denote by $\Omega$ the
+graph of~(\ref{E:rightHyperbola}),
+regarding $a_i$ as an independent variable, $x,$ and $b_i$
+a dependent variable, $y = f(x):$
+\[
+\Omega = \{(x, y) \mid y = f(x)\},
+\]
+and define $g(x)$ by the graph $\Gamma$ satisfying $\Gamma =  C \;
+\Omega,$ i.e.
+\[
+  \{
+  \begin{pmatrix}
+    x\\
+    g(x)
+  \end{pmatrix}
+  \}
+  =
+  \{
+  C
+  \begin{pmatrix}
+    x\\
+    f(x)
+  \end{pmatrix}
+  \} .
+\]
+Letting $h(x) = x - f(x),$ evidently
+\[
+g(x) = g \circ h \circ h^{-1}(x) = m_1 h^{-1}(x) - m_2 f \circ h^{-1}(x),
+\]
+which, upon substitution for $h^{-1}(x),$ yeilds:
+\[
+  g(x) = (\frac{m_1 + m_2}{2}) k(x) \pm
+  (\frac{m_1 - m_2}{2}) \sqrt{k^2(x) + 4 r} - m_1 s - m_2 t,
+\]
+where $k(x) = x + s + t.$
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
